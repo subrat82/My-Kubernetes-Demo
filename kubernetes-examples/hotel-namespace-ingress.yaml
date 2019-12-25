@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hotel-ingress
+  namespace: hotel
+spec:
+  rules:
+  - host: ec2-34-208-57-213.us-west-2.compute.amazonaws.com
+    http:
+      paths:
+      - path: /
+        backend:
+                serviceName: hotel-svc
+                servicePort: 80
